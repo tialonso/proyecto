@@ -2,10 +2,84 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ni un atleta más</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- AOS (animaciones) -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 </head>
 <body>
-    <h1>Ni un atleta más</h1>
-    <p>Somos una colectiva que lucha contra la violencia institucional y en el deporte. Este es nuestro espacio para alzar la voz, compartir información y resistir juntas.</p>
+
+    <!-- Encabezado -->
+    <header>
+        <h1 data-aos="fade-down">Ni un atleta más</h1>
+        <p data-aos="fade-up">Colectiva contra la violencia institucional y deportiva</p>
+        <nav>
+            <ul>
+                <li><a href="#testimonios">Testimonios</a></li>
+                <li><a href="#recursos">Recursos</a></li>
+                <li><a href="#participa">Participa</a></li>
+                <li><a href="#redes">Redes Sociales</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sección: Testimonios -->
+    <section id="testimonios" data-aos="fade-right">
+        <h2>Testimonios</h2>
+        <p>Historias que visibilizan las violencias vividas por atletas. Aquí compartimos voces valientes.</p>
+        <button onclick="aumentarContador()">Sumar tu voz</button>
+        <h3 id="contador">0</h3>
+    </section>
+
+    <!-- Sección: Recursos -->
+    <section id="recursos" data-aos="fade-left">
+        <h2>Recursos</h2>
+        <ul>
+            <li><a href="#">Guía para denunciar</a></li>
+            <li><a href="#">Documentos de apoyo legal</a></li>
+            <li><a href="#">Red de acompañamiento</a></li>
+        </ul>
+    </section>
+
+    <!-- Sección: Participa -->
+    <section id="participa" data-aos="fade-up">
+        <h2>Participa</h2>
+        <p>¿Quieres colaborar o difundir el mensaje? Escríbenos o comparte en tus redes.</p>
+        <a href="mailto:contacto@niunatletamas.org">Escríbenos</a>
+    </section>
+
+    <!-- Sección: Redes Sociales -->
+    <section id="redes" data-aos="zoom-in">
+        <h2>Redes Sociales</h2>
+        <ul>
+            <li><a href="https://instagram.com" target="_blank">Instagram</a></li>
+            <li><a href="https://twitter.com" target="_blank">Twitter/X</a></li>
+            <li><a href="https://tiktok.com" target="_blank">TikTok</a></li>
+        </ul>
+    </section>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2025 Ni un atleta más. Todas las voces cuentan.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+
+        // JS de saludo (para consola)
+        console.log("Gracias por visitar Ni un atleta más.");
+
+        // Contador simbólico
+        let contador = 0;
+        function aumentarContador() {
+            contador++;
+            document.getElementById("contador").innerText = contador;
+        }
+    </script>
 </body>
 </html>
+
