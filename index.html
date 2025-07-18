@@ -5,60 +5,247 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ni un atleta más</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
 
     <!-- AOS (animaciones) -->
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 </head>
 <body>
 
+ 
     <!-- Encabezado -->
-    <header>
-        <h1 data-aos="fade-down">Ni un atleta más</h1>
-        <p data-aos="fade-up">Colectiva contra la violencia institucional y deportiva</p>
-        <nav>
-            <ul>
-                <li><a href="#testimonios">Testimonios</a></li>
-                <li><a href="#recursos">Recursos</a></li>
-                <li><a href="#participa">Participa</a></li>
-                <li><a href="#redes">Redes Sociales</a></li>
-            </ul>
-        </nav>
+    <header class="d-flex justify-content-center align-items-center text-white position-relative" style="height: 100vh; background: url('img/abeja.jpg') center center/cover no-repeat;">
+    <div class="position-absolute top-0 w-100 h-100 bg-dark bg-opacity-50"></div>
+
+    <div class="text-center position-relative z-1">
+    
+        <p class="fw-bold fs-3 mb-4" data-aos="fade-up">Contra la violencia en el deporte, resistimos juntas.</p>
+
+        <!-- Botones con frases clave -->
+        <div class="d-flex flex-wrap justify-content-center gap-3" data-aos="fade-up">
+        <a href="#quienes-somos" class="btn btn-outline-light">¿Quiénes somos?</a>
+        <a href="#testimonios" class="btn btn-outline-light">Alzamos la voz</a>
+        <a href="#recursos" class="btn btn-outline-light">Infórmate</a>
+        <a href="#participa" class="btn btn-outline-light">Súmate</a>
+        <a href="#donaciones" class="btn btn-outline-light">Apóyanos</a>
+        </div>
+    </div>
     </header>
 
-    <!-- Sección: Testimonios -->
-    <section id="testimonios" data-aos="fade-right">
-        <h2>Testimonios</h2>
-        <p>Historias que visibilizan las violencias vividas por atletas. Aquí compartimos voces valientes.</p>
-        <button onclick="aumentarContador()">Sumar tu voz</button>
-        <h3 id="contador">0</h3>
+
+    
+    
+    <main id="contenido">
+    <!-- Sección: ¿Quienes somos? -->
+
+    <section id="quienes-somos" class="py-5 bg-white">
+    <div class="container">
+        <h2 class="text-center mb-4" data-aos="fade-up">¿Quiénes somos?</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                <p class="lead" data-aos="fade-right">
+                    Somos <strong>Ni un atleta más</strong>, una colectiva integrada por personas que hemos vivido violencia institucional y dentro del deporte.
+                    Nuestra lucha nace desde el dolor, pero se convierte en resistencia, apoyo mutuo y denuncia colectiva.
+                </p>
+                <p data-aos="fade-left">
+                    Este espacio es una voz conjunta, una plataforma para visibilizar, acompañar y transformar lo que muchas veces se ha callado. Aquí compartimos información,
+                    recursos, historias reales y vías para sumarse a una causa urgente: <strong>erradicar la violencia estructural</strong> que afecta a quienes alguna vez solo queríamos practicar deporte en paz.
+                </p>
+            </div>
+        </div>
+    </div>
     </section>
+
+
+    <!-- Sección: Integrantes -->
+
+    <section id="integrantes" class="py-5 bg-light text-center">
+    <div class="container">
+        <h2 class="mb-4" data-aos="fade-up">Integrantes</h2>
+        <div class="row justify-content-center">
+        <div class="col-6 col-md-3 mb-4">
+            <img src="img/tere.png" class="rounded-circle img-fluid shadow" alt="Tere Ixchel">
+            <h5 class="mt-2">Tere Ixchel</h5>
+        </div>
+        <div class="col-6 col-md-3 mb-4">
+            <img src="img/cami.webp" class="rounded-circle img-fluid shadow" alt="Camila V.">
+            <h5 class="mt-2">Camila V.</h5>
+        </div>
+        <div class="col-6 col-md-3 mb-4">
+            <img src="img/alexa.jpg" class="rounded-circle img-fluid shadow" alt="Alexa R.">
+            <h5 class="mt-2">Alexa R.</h5>
+        </div>
+        <div class="col-6 col-md-3 mb-4">
+            <img src="img/dani.avif" class="rounded-circle img-fluid shadow" alt="Dani M.">
+            <h5 class="mt-2">Dani M.</h5>
+        </div>
+        </div>
+    </div>
+    </section>
+
+
+
+    <!-- Sección: Testimonios -->
+    <section id="testimonios" class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-4" data-aos="fade-up">Testimonios</h2>
+
+        <div id="carruselTestimonios" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner text-center">
+                <div class="carousel-item active">
+                    <p class="lead">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luct."</p>
+                    <small>- Anónima 1</small>
+                </div>
+                <div class="carousel-item">
+                    <p class="lead">"Me costó alzar la voz, pero aquí encontré respaldo. Gracias."</p>
+                    <small>- Anónima 2</small>
+                </div>
+                <div class="carousel-item">
+                    <p class="lead">"Esta colectiva me ayudó a entender que no estaba sola."</p>
+                    <small>- Anónima 3</small>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <script>
+        const carrusel = document.querySelector('#carruselTestimonios');
+        const carousel = new bootstrap.Carousel(carrusel, {
+            interval: 5000,
+            ride: 'carousel'
+        });
+    </script>
 
     <!-- Sección: Recursos -->
-    <section id="recursos" data-aos="fade-left">
-        <h2>Recursos</h2>
-        <ul>
-            <li><a href="#">Guía para denunciar</a></li>
-            <li><a href="#">Documentos de apoyo legal</a></li>
-            <li><a href="#">Red de acompañamiento</a></li>
+    <section id="recursos" class="py-5 text-white" style="background-color: #8B0000;">
+    <div class="container" data-aos="fade-left">
+        <h2 class="text-center mb-4">Recursos</h2>
+        <ul class="list-group list-group-flush">
+        <li class="list-group-item bg-transparent text-white border-white"><a class="text-white" href="#">📄 Guía para denunciar</a></li>
+        <li class="list-group-item bg-transparent text-white border-white"><a class="text-white" href="#">📁 Documentos de apoyo legal</a></li>
+        <li class="list-group-item bg-transparent text-white border-white"><a class="text-white" href="#">🤝 Red de acompañamiento</a></li>
         </ul>
+    </div>
     </section>
+
 
     <!-- Sección: Participa -->
-    <section id="participa" data-aos="fade-up">
-        <h2>Participa</h2>
-        <p>¿Quieres colaborar o difundir el mensaje? Escríbenos o comparte en tus redes.</p>
-        <a href="mailto:contacto@niunatletamas.org">Escríbenos</a>
+    <section id="participa" class="py-5 bg-white">
+        <div class="container" data-aos="fade-up">
+            <h2 class="text-center mb-4">Participa</h2>
+            <p class="text-center">¿Quieres colaborar o difundir el mensaje? Escríbenos o entérate de nuestras próximas actividades.</p>
+            <div class="text-center d-flex justify-content-center gap-3 flex-wrap">
+                <a href="mailto:contacto@niunatletamas.org" class="btn btn-outline-primary">Escríbenos</a>
+                <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#eventoModal">📣 Próximo evento</button>
+            </div>
+        </div>
     </section>
 
+    <!-- Modal de evento -->
+    <div class="modal fade" id="eventoModal" tabindex="-1" aria-labelledby="eventoModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="eventoModalLabel">Encuentro de resistencia</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+            Únete a nuestro próximo encuentro presencial donde compartiremos testimonios, herramientas y estrategias para acompañarnos.<br><br>
+            <ul>
+            <li>📍 CDMX</li>
+            <li>📅 23 de noviembre de 2025</li>
+            <li>🕐 10:00 a.m.</li>
+            </ul>
+            ¡La resistencia también es colectiva!
+        </div>
+        </div>
+    </div>
+    </div>
+
+
+
     <!-- Sección: Redes Sociales -->
-    <section id="redes" data-aos="zoom-in">
-        <h2>Redes Sociales</h2>
-        <ul>
-            <li><a href="https://instagram.com" target="_blank">Instagram</a></li>
-            <li><a href="https://twitter.com" target="_blank">Twitter/X</a></li>
-            <li><a href="https://tiktok.com" target="_blank">TikTok</a></li>
-        </ul>
+    <section id="redes" class="py-5 bg-light text-center">
+    <div class="container">
+        <h2 class="mb-4" data-aos="zoom-in">Redes Sociales</h2>
+        <p>Síguenos y comparte el mensaje:</p>
+        <div class="d-flex justify-content-center gap-4">
+            <a href="https://tiktok.com/@tereixchel" target="_blank">TikTok</a>
+            <a href="https://instagram.com/tereixchel" target="_blank">Instagram</a>
+            <a href="https://youtube.com/@tereixchel" target="_blank">YouTube</a>
+            <a href="https://facebook.com/tereixchel" target="_blank">Facebook</a>
+        </div>
+    </div>
     </section>
+
+     <!-- Sección: Donaciones -->
+
+    <section id="donaciones" class="text-center py-5">
+    <div class="container">
+        <h2 data-aos="fade-up">Apoya nuestra causa</h2>
+        <p>Tu aportación ayuda a seguir visibilizando, acompañando y construyendo justicia.</p>
+        <button class="btn btn-danger">Donar ahora</button>
+        <p class="mt-2"><small>(Simulación - en construcción)</small></p>
+    </div>
+    </section>
+
+    </main>
+
+
+    <!-- Previews de nuestras redes -->
+
+    <section id="social-feed" class="py-5 bg-light text-center">
+    <div class="container">
+        <h2 data-aos="fade-up">En nuestras redes</h2>
+        <p>Sigue nuestro contenido, comparte y haz visible la lucha.</p>
+
+        <div class="row mt-5 justify-content-center">
+        
+        <!-- TikTok -->
+        <div class="col-md-6 col-lg-3 mb-4">
+            <h5>TikTok</h5>
+            <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@tereixchel/video/7524033039094091016"
+            data-video-id="7285803471250128133" style="max-width: 325px; min-width: 220px;">
+            <section>
+                <a target="_blank" title="@tereixchel" href="https://www.tiktok.com/@tereixchel">@tereixchel</a>
+            </section>
+            </blockquote>
+        </div>
+
+        <!-- Instagram -->
+        <div class="col-md-6 col-lg-3 mb-4">
+            <h5>Instagram</h5>
+            <iframe src="https://lightwidget.com/widgets/YOUR_WIDGET_ID.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe>
+            <!-- Nota: reemplaza YOUR_WIDGET_ID con el ID real generado en lightwidget.com con tu cuenta -->
+        </div>
+
+        <!-- YouTube -->
+        <div class="col-md-6 col-lg-3 mb-4">
+            <h5>YouTube</h5>a
+            <iframe width="100%" height="200" src="https://www.youtube.com/watch?v=V_NnODSlYz8" title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
+            <!-- Cambia YOUTUBE_VIDEO_ID por un ID real -->
+        </div>
+
+        <!-- Facebook -->
+        <div class="col-md-6 col-lg-3 mb-4">
+            <h5>Facebook</h5>
+            <div class="fb-page" data-href="https://www.facebook.com/tereixchel" data-tabs="timeline" data-width="270"
+            data-height="200" data-small-header="false" data-adapt-container-width="true"
+            data-hide-cover="false" data-show-facepile="true"></div>
+        </div>
+
+        </div>
+    </div>
+    </section>
+
+
+
+
 
     <!-- Pie de página -->
     <footer>
@@ -80,6 +267,20 @@
             document.getElementById("contador").innerText = contador;
         }
     </script>
+    <!-- Bootstrap JS (necesario para el carrusel) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+    <!-- TikTok -->
+    <script async src="https://www.tiktok.com/embed.js"></script>
+
+    <!-- Instagram (si usas LightWidget) -->
+    <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
+
+    <!-- Facebook SDK -->
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous"
+    src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v16.0" nonce="JfY4W2Tf"></script>
+
 </body>
 </html>
-
